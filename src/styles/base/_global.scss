@@ -1,0 +1,62 @@
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: $font-primary;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  @include focus-ring;
+}
+
+button {
+  border: 0;
+}
+
+input,
+textarea,
+select {
+  color: var(--color-text);
+}
+
+:disabled {
+  cursor: not-allowed;
+}
+
+.container {
+  width: min(100% - 32px, 1280px);
+  margin-inline: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
