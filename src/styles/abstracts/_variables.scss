@@ -3,8 +3,25 @@
    iLink — Midnight Connection v1.0
 =================================== */
 
+// ===================================
 // Typography
+// ===================================
+
+// Font Families
 $font-primary: "Inter", "Segoe UI", sans-serif;
+$font-heading: "Plus Jakarta Sans", "Inter", sans-serif;
+$font-arabic: "IBM Plex Sans Arabic", sans-serif;
+
+// Font Weights
+$font-regular: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+$font-extrabold: 800;
+
+// ===================================
+// Colors
+// ===================================
 
 // Backgrounds
 $color-background: #090d18;
@@ -32,28 +49,39 @@ $color-info: #73b9ff;
 // Artistic Hands
 $color-hands-glow: #c9b5ff;
 
+// ===================================
 // CSS Custom Properties
+// ===================================
+
 :root {
   color-scheme: dark;
 
+  // Backgrounds
   --color-bg: #{$color-background};
   --color-surface: #{$color-surface};
   --color-elevated: #{$color-elevated};
 
+  // Brand
   --color-primary: #{$color-primary};
   --color-primary-hover: #{$color-primary-hover};
   --color-lavender: #{$color-lavender};
 
+  // Text
   --color-text: #{$color-text};
   --color-text-muted: #{$color-text-muted};
 
+  // Borders
   --color-border: #{$color-border};
 
+  // Feedback
   --color-success: #{$color-success};
   --color-warning: #{$color-warning};
   --color-error: #{$color-error};
   --color-info: #{$color-info};
 
+  // Artistic Hands
   --color-hands-glow: #{$color-hands-glow};
+
+  // Accessibility
   --color-focus: #{$color-lavender};
 }
