@@ -1,0 +1,60 @@
+
+@use "./variables" as *;
+
+// Flexbox
+@mixin flex(
+  $justify: center,
+  $align: center,
+  $direction: row,
+  $gap: 0
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+// Responsive
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: #{$breakpoint-sm}) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: #{$breakpoint-md}) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: #{$breakpoint-lg}) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: #{$breakpoint-xl}) {
+      @content;
+    }
+  } @else {
+    @error "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+// Accessible focus
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+}
+
+// Visually hidden but accessible
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
