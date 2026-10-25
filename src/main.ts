@@ -17,3 +17,10 @@ import "@fontsource/ibm-plex-sans-arabic/arabic-600.css";
 
 // Main Styles
 import "./styles/main.scss";
+
+import $ from "jquery";
+
+$(function (): void {
+  console.log("iLink initialized successfully!");
+  console.log("jQuery version:", $.fn.jquery);
+});
