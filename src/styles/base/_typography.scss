@@ -1,0 +1,66 @@
+
+@use "../abstracts/variables" as vars;
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: vars.$font-heading;
+  font-weight: vars.$font-bold;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+// Body text
+p {
+  line-height: 1.7;
+}
+
+// Small text
+small {
+  font-size: 0.875rem;
+}
+
+// Arabic typography
+:lang(ar) {
+  font-family: vars.$font-arabic;
+  letter-spacing: normal;
+}
+
+:lang(ar) h1,
+:lang(ar) h2,
+:lang(ar) h3,
+:lang(ar) h4,
+:lang(ar) h5,
+:lang(ar) h6 {
+  font-family: vars.$font-arabic;
+  letter-spacing: normal;
+}
