@@ -3,21 +3,20 @@
    iLink — Main Stylesheet
 =================================== */
 
-// Design tokens
+// Design Tokens
 @use "./abstracts/variables";
 
-// Base styles
+// Base Styles
 @use "./base/reset";
 @use "./base/global";
-@use "./abstracts/variables";
 @use "./base/typography";
 
-// Components will be added here
+// Components
 // @use "./components/buttons";
 // @use "./components/inputs";
 
-// Layouts will be added here
+// Layouts
 // @use "./layouts/auth-layout";
 
-// Pages will be added here
+// Pages
 // @use "./pages/login";
