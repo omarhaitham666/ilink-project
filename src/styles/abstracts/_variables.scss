@@ -1,5 +1,10 @@
 
-/* iLink — Midnight Connection v1.0 */
+/* ===================================
+   iLink — Midnight Connection v1.0
+=================================== */
+
+// Typography
+$font-primary: "Inter", "Segoe UI", sans-serif;
 
 // Backgrounds
 $color-background: #090d18;
@@ -11,7 +16,7 @@ $color-primary: #8b7cff;
 $color-primary-hover: #a99dff;
 $color-lavender: #b9a5ff;
 
-// Typography
+// Text
 $color-text: #f4f3ff;
 $color-text-muted: #a6acc2;
 
@@ -24,5 +29,31 @@ $color-warning: #f4b860;
 $color-error: #f47791;
 $color-info: #73b9ff;
 
-// Artistic hands
+// Artistic Hands
 $color-hands-glow: #c9b5ff;
+
+// CSS Custom Properties
+:root {
+  color-scheme: dark;
+
+  --color-bg: #{$color-background};
+  --color-surface: #{$color-surface};
+  --color-elevated: #{$color-elevated};
+
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+  --color-lavender: #{$color-lavender};
+
+  --color-text: #{$color-text};
+  --color-text-muted: #{$color-text-muted};
+
+  --color-border: #{$color-border};
+
+  --color-success: #{$color-success};
+  --color-warning: #{$color-warning};
+  --color-error: #{$color-error};
+  --color-info: #{$color-info};
+
+  --color-hands-glow: #{$color-hands-glow};
+  --color-focus: #{$color-lavender};
+}
