@@ -1,0 +1,113 @@
+
+@use "../abstracts/variables" as vars;
+
+// ===================================
+// iLink Button System
+// ===================================
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+
+  min-height: 44px;
+  padding: 12px 20px;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+
+  font-family: vars.$font-primary;
+  font-size: 0.875rem;
+  font-weight: vars.$font-semibold;
+  line-height: 1.25;
+
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    opacity var(--transition-fast);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  // Variants
+  &--primary {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+
+    &:not(:disabled):not([aria-disabled="true"]):hover {
+      background-color: var(--color-primary-hover);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--color-elevated);
+    color: var(--color-text);
+
+    &:not(:disabled):not([aria-disabled="true"]):hover {
+      background-color: var(--color-surface);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    color: var(--color-lavender);
+
+    &:not(:disabled):not([aria-disabled="true"]):hover {
+      background-color: var(--color-elevated);
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: var(--color-lavender);
+
+    &:not(:disabled):not([aria-disabled="true"]):hover {
+      background-color: var(--color-elevated);
+    }
+  }
+
+  // Sizes
+  &--sm {
+    min-height: 36px;
+    padding: 8px 14px;
+    font-size: 0.8125rem;
+  }
+
+  &--lg {
+    min-height: 52px;
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+
+  // Layout
+  &--block {
+    display: flex;
+    width: 100%;
+  }
+
+  // Loading state
+  &--loading {
+    cursor: wait;
+  }
+
+  &[aria-busy="true"] {
+    cursor: wait;
+  }
+}
