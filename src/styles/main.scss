@@ -10,6 +10,10 @@
 @use "./base/reset";
 @use "./base/global";
 @use "./base/typography";
+@use "./layouts/auth-layout";
+@use "./components/auth-form";
+@use "./components/inputs";
+@use "./components/buttons";
 
 // Components
 // @use "./components/buttons";

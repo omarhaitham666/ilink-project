@@ -1,0 +1,61 @@
+
+@use "../abstracts/variables" as *;
+
+.form-group input:not([type="checkbox"]) {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  border: 1px solid #e2e5ef;
+  border-radius: 12px;
+  background: #f8f9fc;
+  color: #171827;
+  font: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &::placeholder {
+    color: #9ca3b5;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 4px rgba(139, 124, 255, 0.12);
+  }
+
+  &[aria-invalid="true"] {
+    border-color: #e65b75;
+  }
+}
+
+.password-field {
+  position: relative;
+
+  input {
+    padding-right: 75px !important;
+  }
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  color: #7564e8;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-error {
+  color: #dc3657;
+  font-size: 12px;
+
+  &:empty {
+    display: none;
+  }
+}

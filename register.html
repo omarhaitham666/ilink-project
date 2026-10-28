@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090d18" />
+  <title>Register | iLink</title>
+</head>
+<body>
+  <main class="auth-page">
+
+    <section class="auth-visual">
+      <a href="/" class="auth-brand">i<span>Link</span></a>
+
+      <div class="auth-visual__art" aria-hidden="true">
+        <div class="auth-visual__glow"></div>
+      </div>
+
+      <div class="auth-visual__content">
+        <span class="auth-eyebrow">JOIN THE CONNECTION</span>
+        <h2>Your story starts here.</h2>
+        <p>
+          Meet new people, express yourself, and become
+          part of something different.
+        </p>
+      </div>
+
+      <span class="auth-visual__footer">
+        © 2026 iLink. All rights reserved.
+      </span>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-panel__inner">
+
+        <a href="/" class="auth-mobile-brand">
+          i<span>Link</span>
+        </a>
+
+        <header class="auth-header">
+          <span class="auth-header__eyebrow">GET STARTED</span>
+          <h1>Create your account</h1>
+          <p>Join iLink and start connecting today.</p>
+        </header>
+
+        <form id="register-form" class="auth-form" novalidate>
+
+          <div class="form-group">
+            <label for="name">Full name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required
+            />
+            <small class="form-error" id="name-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              autocomplete="email"
+              required
+            />
+            <small class="form-error" id="email-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-field">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Create a password"
+                autocomplete="new-password"
+                required
+                minlength="8"
+              />
+              <button
+                type="button"
+                class="password-toggle"
+                aria-label="Show password"
+                aria-pressed="false"
+                data-password-toggle
+                data-target="password"
+              >
+                Show
+              </button>
+            </div>
+            <small class="form-error" id="password-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm password</label>
+            <div class="password-field">
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                autocomplete="new-password"
+                required
+              />
+              <button
+                type="button"
+                class="password-toggle"
+                aria-label="Show password"
+                aria-pressed="false"
+                data-password-toggle
+                data-target="confirm-password"
+              >
+                Show
+              </button>
+            </div>
+            <small class="form-error" id="confirm-password-error"></small>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Create account
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="auth-switch">
+          Already have an account?
+          <a href="/login.html">Sign in</a>
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="/src/scripts/pages/register.ts"></script>
+</body>
+</html>

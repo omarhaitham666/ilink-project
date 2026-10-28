@@ -1,0 +1,133 @@
+
+@use "../abstracts/variables" as *;
+
+.auth-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.auth-visual {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: clamp(28px, 4vw, 64px);
+  background: $color-background;
+  color: $color-text;
+
+  &__art {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(
+        ellipse at 55% 45%,
+        rgba(139, 124, 255, 0.22),
+        transparent 55%
+      );
+  }
+
+  &__glow {
+    width: 55%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgba(139, 124, 255, 0.28);
+    filter: blur(90px);
+  }
+
+  &__content {
+    max-width: 500px;
+
+    h2 {
+      margin: 16px 0;
+      font-size: clamp(36px, 4vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    p {
+      max-width: 390px;
+      color: $color-text-muted;
+      line-height: 1.8;
+    }
+  }
+
+  &__footer {
+    font-size: 12px;
+    color: $color-text-muted;
+  }
+}
+
+.auth-brand,
+.auth-mobile-brand {
+  width: fit-content;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  text-decoration: none;
+}
+
+.auth-brand {
+  color: #fff;
+}
+
+.auth-brand span,
+.auth-mobile-brand span {
+  color: $color-primary;
+}
+
+.auth-eyebrow {
+  color: $color-lavender;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.auth-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 48px 32px;
+  background: #fff;
+  color: #171827;
+
+  &__inner {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+.auth-mobile-brand {
+  display: none;
+  margin-bottom: 40px;
+  color: #171827;
+}
+
+@media (max-width: 900px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-visual {
+    display: none;
+  }
+
+  .auth-panel {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 48px 24px;
+  }
+
+  .auth-mobile-brand {
+    display: block;
+  }
+}

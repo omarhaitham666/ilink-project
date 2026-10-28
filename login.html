@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090d18" />
+  <title>Login | iLink</title>
+</head>
+<body>
+  <main class="auth-page">
+
+    <!-- Left Visual Section -->
+    <section class="auth-visual">
+      <a href="/" class="auth-brand">i<span>Link</span></a>
+
+      <div class="auth-visual__art" aria-hidden="true">
+        <div class="auth-visual__glow"></div>
+        <!-- Add hands.webp here later -->
+      </div>
+
+      <div class="auth-visual__content">
+        <span class="auth-eyebrow">WELCOME TO ILINK</span>
+        <h2>Connections start here.</h2>
+        <p>
+          Discover people, share moments, and build
+          meaningful connections.
+        </p>
+      </div>
+
+      <span class="auth-visual__footer">
+        © 2026 iLink. All rights reserved.
+      </span>
+    </section>
+
+    <!-- Right Form Section -->
+    <section class="auth-panel">
+      <div class="auth-panel__inner">
+
+        <a href="/" class="auth-mobile-brand">
+          i<span>Link</span>
+        </a>
+
+        <header class="auth-header">
+          <span class="auth-header__eyebrow">WELCOME BACK</span>
+          <h1>Sign in to iLink</h1>
+          <p>
+            Enter your details to continue your journey.
+          </p>
+        </header>
+
+        <form id="login-form" class="auth-form" novalidate>
+
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              autocomplete="email"
+              required
+            />
+            <small class="form-error" id="email-error"></small>
+          </div>
+
+          <div class="form-group">
+            <div class="form-group__top">
+              <label for="password">Password</label>
+              <a href="#" class="forgot-password">
+                Forgot password?
+              </a>
+            </div>
+
+            <div class="password-field">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+              />
+              <button
+                type="button"
+                class="password-toggle"
+                aria-label="Show password"
+                aria-pressed="false"
+                data-password-toggle
+                data-target="password"
+              >
+                Show
+              </button>
+            </div>
+            <small class="form-error" id="password-error"></small>
+          </div>
+
+          <div class="auth-options">
+            <label class="remember-me">
+              <input type="checkbox" name="remember" />
+              <span>Remember me</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Sign in
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="auth-switch">
+          Don't have an account?
+          <a href="/register.html">Create account</a>
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="/src/scripts/pages/login.ts"></script>
+</body>
+</html>
