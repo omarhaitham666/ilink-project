@@ -2,13 +2,42 @@
 import { Sidebar } from "../layouts/sidebar";
 import { PlaceholderPage } from "../pages/placeholder";
 
-const routes: Record<string, string> = {
-  "/feed": "Home",
-  "/connections": "Connections",
-  "/messages": "Messages",
-  "/profile": "Profile",
-  "/settings": "Settings",
+import { ProfilePage } from "../features/profile/profile.ui";
+
+type Route = {
+  title: string;
+  render: () => string;
+  mount?: () => void | (() => void);
 };
+
+const routes: Record<string, Route> = {
+  "/feed": {
+    title: "Home",
+    render: () => PlaceholderPage("Home"),
+  },
+
+  "/connections": {
+    title: "Connections",
+    render: () => PlaceholderPage("Connections"),
+  },
+
+  "/messages": {
+    title: "Messages",
+    render: () => PlaceholderPage("Messages"),
+  },
+
+"/profile": {
+  title: "Profile",
+  render: ProfilePage,
+},
+
+  "/settings": {
+    title: "Settings",
+    render: () => PlaceholderPage("Settings"),
+  },
+};
+
+let cleanupCurrentPage: (() => void) | undefined;
 
 function normalizePath(path: string): string {
   if (path === "/") return "/feed";
@@ -21,27 +50,46 @@ function renderRoute(): void {
 
   if (!app) return;
 
+  // Remove listeners from the previous page
+  cleanupCurrentPage?.();
+  cleanupCurrentPage = undefined;
+
   const path = normalizePath(window.location.pathname);
-  const title = routes[path];
+  const route = routes[path];
+
+  const pageContent = route
+    ? route.render()
+    : PlaceholderPage("404 — Page Not Found");
 
   app.innerHTML = `
     <div class="app-layout">
       ${Sidebar(path)}
 
       <main class="app-layout__content">
-        ${
-          title
-            ? PlaceholderPage(title)
-            : PlaceholderPage("404 — Page Not Found")
-        }
+        ${pageContent}
       </main>
     </div>
   `;
+
+  // Initialize interactions after rendering HTML
+  if (route?.mount) {
+    const cleanup = route.mount();
+
+    if (typeof cleanup === "function") {
+      cleanupCurrentPage = cleanup;
+    }
+  }
+
+  document.title = route
+    ? `${route.title} | iLink`
+    : "404 | iLink";
 }
 
 export function navigate(path: string): void {
-  if (window.location.pathname !== path) {
-    window.history.pushState({}, "", path);
+  const normalizedPath = normalizePath(path);
+
+  if (window.location.pathname !== normalizedPath) {
+    window.history.pushState({}, "", normalizedPath);
   }
 
   renderRoute();
@@ -58,6 +106,7 @@ export function initRouter(): void {
     if (!link) return;
 
     if (
+      event.defaultPrevented ||
       event.button !== 0 ||
       event.ctrlKey ||
       event.metaKey ||
@@ -72,7 +121,7 @@ export function initRouter(): void {
 
     event.preventDefault();
 
-    navigate(link.pathname);
+    navigate(link.pathname + link.search + link.hash);
   });
 
   window.addEventListener("popstate", renderRoute);
