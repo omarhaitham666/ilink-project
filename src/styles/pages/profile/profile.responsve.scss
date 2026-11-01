@@ -1,0 +1,45 @@
+@media (max-width: 768px) {
+  .profile-header {
+    &__cover {
+      height: 160px;
+    }
+
+    &__content {
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 16px;
+    }
+
+    &__avatar {
+      width: 95px;
+      height: 95px;
+      margin-top: -55px;
+    }
+
+    &__info {
+      flex-basis: 100%;
+    }
+
+    &__identity h1 {
+      font-size: 20px;
+    }
+
+    &__actions {
+      width: 100%;
+
+      button {
+        flex: 1;
+      }
+    }
+  }
+
+  .profile-tabs {
+    gap: 24px;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    &__item {
+      flex-shrink: 0;
+    }
+  }
+}
