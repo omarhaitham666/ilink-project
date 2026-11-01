@@ -24,3 +24,12 @@ $(function (): void {
   console.log("iLink initialized successfully!");
   console.log("jQuery version:", $.fn.jquery);
 });
+
+
+import { Sidebar } from "./scripts/layouts/sidebar";
+
+const app = document.querySelector<HTMLDivElement>("#app");
+
+if (app) {
+  app.innerHTML = Sidebar("/profile");
+}
