@@ -1,3 +1,4 @@
+
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
@@ -6,11 +7,17 @@ html {
 }
 
 body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+
   background-color: var(--color-bg);
   color: var(--color-text);
+
   font-family: $font-primary;
   font-size: 16px;
   line-height: 1.6;
+
   -webkit-font-smoothing: antialiased;
 }
 
@@ -29,12 +36,20 @@ select {
 
 button {
   border: 0;
+  cursor: pointer;
+  font: inherit;
 }
 
 input,
 textarea,
 select {
+  font: inherit;
   color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 :disabled {
@@ -42,7 +57,7 @@ select {
 }
 
 .container {
-  width: min(100% - 32px, 1280px);
+  width: min(100% - 32px, $container-max-width);
   margin-inline: auto;
 }
 

@@ -104,6 +104,9 @@ html {
 }
 
 body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: "Inter", "Segoe UI", sans-serif;
@@ -133,12 +136,20 @@ select:focus-visible {
 
 button {
   border: 0;
+  cursor: pointer;
+  font: inherit;
 }
 
 input,
 textarea,
 select {
+  font: inherit;
   color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 :disabled {
