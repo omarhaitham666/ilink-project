@@ -1,6 +1,6 @@
 
 /* ===================================
-   iLink — Midnight Connection v1.0
+   iLink — Midnight Purple v2.0
 =================================== */
 
 // ===================================
@@ -24,21 +24,25 @@ $font-extrabold: 800;
 // ===================================
 
 // Backgrounds
-$color-background: #090d18;
-$color-surface: #121827;
-$color-elevated: #1b2335;
+$color-background: #09090f;
+$color-surface: #12111b;
+$color-elevated: #1c192a;
+$color-surface-hover: #252033;
 
 // Brand
-$color-primary: #8b7cff;
-$color-primary-hover: #a99dff;
-$color-lavender: #b9a5ff;
+$color-primary: #a855f7;
+$color-primary-hover: #c084fc;
+$color-primary-active: #9333ea;
+$color-lavender: #c084fc;
 
 // Text
-$color-text: #f4f3ff;
-$color-text-muted: #a6acc2;
+$color-text: #f5f3ff;
+$color-text-muted: #a1a1aa;
+$color-text-subtle: #71717a;
 
 // Borders
-$color-border: #293149;
+$color-border: #30263d;
+$color-border-hover: #6b438d;
 
 // Feedback
 $color-success: #36c99a;
@@ -50,42 +54,28 @@ $color-info: #73b9ff;
 $color-hands-glow: #c9b5ff;
 
 // ===================================
-// CSS Custom Properties
+// Gradients
 // ===================================
 
-:root {
-  color-scheme: dark;
+$gradient-primary: linear-gradient(
+  135deg,
+  #a855f7 0%,
+  #c084fc 100%
+);
 
-  // Backgrounds
-  --color-bg: #{$color-background};
-  --color-surface: #{$color-surface};
-  --color-elevated: #{$color-elevated};
+$gradient-cover: linear-gradient(
+  135deg,
+  #241337 0%,
+  #4b236a 55%,
+  #151020 100%
+);
 
-  // Brand
-  --color-primary: #{$color-primary};
-  --color-primary-hover: #{$color-primary-hover};
-  --color-lavender: #{$color-lavender};
+// ===================================
+// Shadows
+// ===================================
 
-  // Text
-  --color-text: #{$color-text};
-  --color-text-muted: #{$color-text-muted};
-
-  // Borders
-  --color-border: #{$color-border};
-
-  // Feedback
-  --color-success: #{$color-success};
-  --color-warning: #{$color-warning};
-  --color-error: #{$color-error};
-  --color-info: #{$color-info};
-
-  // Artistic Hands
-  --color-hands-glow: #{$color-hands-glow};
-
-  // Accessibility
-  --color-focus: #{$color-lavender};
-}
-
+$shadow-card: 0 8px 32px rgba(0, 0, 0, 0.22);
+$shadow-primary: 0 0 24px rgba(168, 85, 247, 0.18);
 
 // ===================================
 // Spacing
@@ -111,6 +101,15 @@ $radius-xl: 24px;
 $radius-pill: 9999px;
 
 // ===================================
+// Layout
+// ===================================
+
+$container-max-width: 1280px;
+$sidebar-width: 240px;
+$topbar-height: 76px;
+$bottom-nav-height: 70px;
+
+// ===================================
 // Breakpoints
 // ===================================
 
@@ -126,3 +125,57 @@ $breakpoint-xl: 1440px;
 $transition-fast: 150ms ease;
 $transition-normal: 250ms ease;
 $transition-slow: 400ms ease;
+
+// ===================================
+// CSS Custom Properties
+// ===================================
+
+:root {
+  color-scheme: dark;
+
+  // Backgrounds
+  --color-bg: #{$color-background};
+  --color-surface: #{$color-surface};
+  --color-elevated: #{$color-elevated};
+  --color-surface-hover: #{$color-surface-hover};
+
+  // Brand
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+  --color-primary-active: #{$color-primary-active};
+  --color-lavender: #{$color-lavender};
+
+  // Text
+  --color-text: #{$color-text};
+  --color-text-muted: #{$color-text-muted};
+  --color-text-subtle: #{$color-text-subtle};
+
+  // Borders
+  --color-border: #{$color-border};
+  --color-border-hover: #{$color-border-hover};
+
+  // Feedback
+  --color-success: #{$color-success};
+  --color-warning: #{$color-warning};
+  --color-error: #{$color-error};
+  --color-info: #{$color-info};
+
+  // Artistic Hands
+  --color-hands-glow: #{$color-hands-glow};
+
+  // Gradients
+  --gradient-primary: #{$gradient-primary};
+  --gradient-cover: #{$gradient-cover};
+
+  // Shadows
+  --shadow-card: #{$shadow-card};
+  --shadow-primary: #{$shadow-primary};
+
+  // Layout
+  --sidebar-width: #{$sidebar-width};
+  --topbar-height: #{$topbar-height};
+  --bottom-nav-height: #{$bottom-nav-height};
+
+  // Accessibility
+  --color-focus: #{$color-lavender};
+}
