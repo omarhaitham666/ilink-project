@@ -25,11 +25,8 @@ $(function (): void {
   console.log("jQuery version:", $.fn.jquery);
 });
 
+import { initRouter } from "./scripts/core/router";
 
-import { Sidebar } from "./scripts/layouts/sidebar";
+initRouter();
 
-const app = document.querySelector<HTMLDivElement>("#app");
 
-if (app) {
-  app.innerHTML = Sidebar("/profile");
-}
