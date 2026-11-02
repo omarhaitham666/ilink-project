@@ -3,6 +3,7 @@ import { Sidebar } from "../layouts/sidebar";
 import { PlaceholderPage } from "../pages/placeholder";
 
 import { ProfilePage } from "../features/profile/profile.ui";
+import { initProfileEvents } from "../features/profile/profile.events";
 
 type Route = {
   title: string;
@@ -29,6 +30,7 @@ const routes: Record<string, Route> = {
 "/profile": {
   title: "Profile",
   render: ProfilePage,
+  mount:initProfileEvents
 },
 
   "/settings": {

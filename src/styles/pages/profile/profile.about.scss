@@ -1,0 +1,81 @@
+
+.profile-about-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.about-section {
+  padding: 24px;
+}
+
+.about-section__header {
+  margin-bottom: 24px;
+
+  h2 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+// Personal & Professional Information
+.about-info__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.about-info__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  span {
+    color: var(--color-text-subtle);
+    font-size: 13px;
+  }
+
+  strong {
+    color: var(--color-text);
+    font-size: 14px;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+  }
+}
+
+// Social Links
+.about-social {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 16px;
+
+    background: var(--color-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+
+    color: var(--color-text);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+    &:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      background: var(--color-surface-hover);
+    }
+  }
+}
+
+

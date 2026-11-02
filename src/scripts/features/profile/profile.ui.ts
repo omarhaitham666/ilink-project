@@ -1,4 +1,7 @@
 import { mockProfileData } from "./profile.data";
+import { overviewPage } from "./profile.content/profile.overview";
+import { aboutPage } from "./profile.content/profile.about";
+import { postsPage } from "./profile.content/profile.posts";
 
 export function ProfilePage(): string {
   return `
@@ -58,27 +61,51 @@ export function ProfilePage(): string {
       <!-- Profile Tabs -->
       <nav class="profile-tabs">
 
-        <button class="profile-tabs__item is-active">
+        <button class="profile-tabs__item is-active" data-tab="overview">
           Overview
         </button>
 
-        <button class="profile-tabs__item">
+        <button class="profile-tabs__item" data-tab="about">
           About
         </button>
 
-        <button class="profile-tabs__item">
+        <button class="profile-tabs__item" data-tab="posts">
           Posts
         </button>
 
-        <button class="profile-tabs__item">
+        <button class="profile-tabs__item" data-tab="projects">
           Projects
         </button>
 
-        <button class="profile-tabs__item">
+        <button class="profile-tabs__item" data-tab="activity">
           Activity
         </button>
 
       </nav>
+
+      <div class="profile-tab-content">
+ <div data-page="overview" class="is-active">
+    ${overviewPage()}
+  </div>
+
+ <div data-page="about">
+   ${aboutPage()}
+  </div>
+
+ <div data-page="posts">
+  ${postsPage()}
+  </div>
+
+ <div data-page="projects">
+  
+  </div>
+
+ <div data-page="activity">
+    
+  </div>
+
+</div>
+
 
     </section>
   `

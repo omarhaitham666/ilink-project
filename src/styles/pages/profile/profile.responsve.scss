@@ -1,3 +1,5 @@
+// profile base data
+
 @media (max-width: 768px) {
   .profile-header {
     &__cover {
@@ -41,5 +43,93 @@
     &__item {
       flex-shrink: 0;
     }
+  }
+}
+
+////////////////////////// overview page in profile //////////////////////////////////
+
+@media (max-width: 768px) {
+  .profile-content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .profile-activity {
+    grid-column: auto;
+  }
+
+  .profile-card {
+    padding: 18px;
+  }
+
+  .profile-about__item {
+    flex-wrap: wrap;
+  }
+}
+
+
+//////////////////// About Page  ///////////////////////////////
+
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 18px;
+  }
+
+  .about-info__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-social {
+    grid-template-columns: 1fr;
+  }
+}
+
+//////////////////// About Page  ///////////////////////////////
+
+
+
+@media (max-width: 768px) {
+  .profile-posts {
+    margin-top: 20px;
+  }
+
+  .create-post,
+  .post-card {
+    padding: 16px;
+  }
+
+  .post-card__content img {
+    max-height: 300px;
+  }
+
+  .post-card__actions {
+    gap: 4px;
+
+    button {
+      font-size: 11px;
+      gap: 5px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .post-card__stats {
+    font-size: 11px;
+  }
+
+  .create-post__body {
+    gap: 10px;
+
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  .post-card__user img {
+    width: 40px;
+    height: 40px;
   }
 }

@@ -1,3 +1,6 @@
 @use "./profile.header" as *;
 @use "./profile.tabs" as *;
 @use "./profile.responsve" as *;
+@use "./profile.overview.scss" as *;
+@use "./profile.about.scss" as *;
+@use "./profile.posts.scss" as *;
