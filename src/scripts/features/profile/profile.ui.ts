@@ -2,6 +2,8 @@ import { mockProfileData } from "./profile.data";
 import { overviewPage } from "./profile.content/profile.overview";
 import { aboutPage } from "./profile.content/profile.about";
 import { postsPage } from "./profile.content/profile.posts";
+import portfolioPage from "./profile.content/profile.portfolio";
+import activityPage from "./profile.content/profile.activity";
 
 export function ProfilePage(): string {
   return `
@@ -73,8 +75,8 @@ export function ProfilePage(): string {
           Posts
         </button>
 
-        <button class="profile-tabs__item" data-tab="projects">
-          Projects
+        <button class="profile-tabs__item" data-tab="portfolio">
+          Portfolio
         </button>
 
         <button class="profile-tabs__item" data-tab="activity">
@@ -96,12 +98,12 @@ export function ProfilePage(): string {
   ${postsPage()}
   </div>
 
- <div data-page="projects">
-  
+ <div data-page="portfolio">
+${portfolioPage()}
   </div>
 
  <div data-page="activity">
-    
+    ${activityPage()}
   </div>
 
 </div>

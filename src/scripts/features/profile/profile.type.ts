@@ -20,7 +20,7 @@ description?:string
 location?:string
 education?:string
 jobTitle?:string
-skill?:string
+skill?:string[]
 activity?:string
 
 }
@@ -42,4 +42,31 @@ experienceLevel?:string
 department?:string
 
 }
+
+
+
+///////////////////////// posts Data ///////////////////////////////////////
+
+export interface postsData {
+content?:string
+img?:string
+}
+
+
+
+
+/////////////////////////// Portfolio Data ///////////////////////////////////
+
+export interface portfolioData {
+img?:string
+category?:string 
+calendar?:number
+title?:string
+description?:string
+tools?:string[]
+link?:string
+}
+
+
+
 

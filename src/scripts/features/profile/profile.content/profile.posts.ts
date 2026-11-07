@@ -1,7 +1,10 @@
-import { mockAbout, mockProfileData } from "../profile.data";
+import { mockAbout, mockPosts, mockProfileData } from "../profile.data";
+import { postsData } from "../profile.type";
 
 export function postsPage(){
 
+const posts:postsData[] = mockPosts
+  
 return `<section class="profile-posts">
 
   <!-- Create Post -->
@@ -30,7 +33,8 @@ return `<section class="profile-posts">
   </div>
 
   <!-- Post Card -->
-  <article class="profile-card post-card">
+
+  ${posts.map((post)=>`<article class="profile-card post-card">
 
     <div class="post-card__header">
       <div class="post-card__user">
@@ -50,11 +54,10 @@ return `<section class="profile-posts">
 
     <div class="post-card__content">
       <p>
-        Just finished working on my latest Front-End project!
-        Learning something new every day makes the journey exciting.
-      </p>
+      ${post.content}
+     </p>
 
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" alt="Post Image">
+     ${post.img ? `<img src="${post.img}" alt="Post image">` : ""}
     </div>
 
     <div class="post-card__stats">
@@ -68,46 +71,7 @@ return `<section class="profile-posts">
       <button><i class="fa-solid fa-share"></i> Share</button>
     </div>
 
-  </article>
-
-  <!-- Second Post -->
-  <article class="profile-card post-card">
-
-    <div class="post-card__header">
-      <div class="post-card__user">
-        <img src=${mockProfileData.avatar} alt="User Avatar">
-
-        <div>
-           <h3>${mockProfileData.name}</h3>
-          <span>${mockAbout.jobTitle}</span>
-          <small>Yesterday · <i class="fa-solid fa-earth-americas"></i></small>
-        </div>
-      </div>
-
-      <button class="post-menu">
-        <i class="fa-solid fa-ellipsis"></i>
-      </button>
-    </div>
-
-    <div class="post-card__content">
-      <p>
-        Consistency is the key to becoming a better developer.
-        Keep building, keep learning!
-      </p>
-    </div>
-
-    <div class="post-card__stats">
-      <span><i class="fa-solid fa-heart"></i> 15 Likes</span>
-      <span>3 Comments</span>
-    </div>
-
-    <div class="post-card__actions">
-      <button><i class="fa-regular fa-heart"></i> Like</button>
-      <button><i class="fa-regular fa-comment"></i> Comment</button>
-      <button><i class="fa-solid fa-share"></i> Share</button>
-    </div>
-
-  </article>
+  </article>`).join("")}
 
 </section>`
 

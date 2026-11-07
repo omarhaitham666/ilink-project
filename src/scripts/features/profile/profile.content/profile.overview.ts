@@ -47,13 +47,7 @@ return `<!-- Profile Content -->
     </div>
 
     <div class="profile-skills__list">
-      <span class="profile-skills__tag">${mockOverview.skill}</span>
-      <span class="profile-skills__tag">${mockOverview.skill}</span>
-      <span class="profile-skills__tag">${mockOverview.skill}</span>
-      <span class="profile-skills__tag">${mockOverview.skill}</span>
-      <span class="profile-skills__tag">${mockOverview.skill}</span>
-      <span class="profile-skills__tag">${mockOverview.skill}</span>
-      <span class="profile-skills__tag">${mockOverview.skill}</span>
+   ${mockOverview.skill?.map((skills)=>`<span class="profile-skills__tag">${skills}</span>`).join("")}
     </div>
 
   </div>

@@ -1,6 +1,6 @@
 /** Mock Data for Profile Page  */
 
-import { aboutData, overviewAboutMe, ProfileBaseData } from "./profile.type";
+import { aboutData, overviewAboutMe, portfolioData, postsData, ProfileBaseData } from "./profile.type";
 
 export const mockProfileData:ProfileBaseData = {
 
@@ -22,7 +22,7 @@ description:'Passionate Front-End Developer and Biotechnology student.   Interes
 location:'Alexandria, Egypt',
 education:'Agricultural Saba Basha',
 jobTitle:'student',
-skill:'HTML', 
+skill:['HTML','CSS','Javascript','TypeScript','React','Bootstrap'], 
 activity:'Working on a new Front-End project.'
 
 }
@@ -43,3 +43,36 @@ education:'University Student',
 experienceLevel:'Beginner'
 
 }
+
+/** Mock Data for posts page in profile */
+
+export const mockPosts:postsData[] = [{
+        img:'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200',
+    content:'Just finished working on my latest Front-End project!  Learning something new every day makes the journey exciting.'
+},{
+    content:'Just finished working on a new frontend project! '
+}]
+
+
+/** Mock Data for portfolio in profile */
+
+export const mockPortfolio:portfolioData[] = [{
+    img:"https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800",
+    category:'Design',
+    calendar:2026,
+    title:'Creative Portfolio Design',
+    description:'A creative project showcasing modern visual design and unique user experiences.',
+    tools:['figma','UI/UX'],
+    link:'https://www.facebook.com'
+}
+,{
+  img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+  category: "Web Development",
+  calendar: 2025,
+  title: "Modern E-Commerce Website",
+  description: "A responsive online shopping platform with a clean interface and smooth user experience.",
+  tools:['HTML', 'CSS', 'JavaScript', 'TypeScript'],
+  link: "https://github.com"
+}
+
+]

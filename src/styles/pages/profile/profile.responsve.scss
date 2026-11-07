@@ -46,6 +46,29 @@
   }
 }
 
+/////////////////////////// tabs page ////////////////////////////
+
+@media (max-width: 768px) {
+  .profile-tabs {
+    gap: 24px;
+    padding: 0 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__item {
+      flex-shrink: 0;
+    }
+  }
+}
+
+
 ////////////////////////// overview page in profile //////////////////////////////////
 
 @media (max-width: 768px) {
@@ -86,7 +109,7 @@
   }
 }
 
-//////////////////// About Page  ///////////////////////////////
+//////////////////// posts Page  ///////////////////////////////
 
 
 
@@ -131,5 +154,208 @@
   .post-card__user img {
     width: 40px;
     height: 40px;
+  }
+}
+
+
+/////////////////////// Portfolio page ////////////////////////////
+
+
+@media (max-width: 1024px) {
+  .profile-projects__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-projects {
+    width: 100%;
+    min-width: 0;
+
+    .profile-card {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 18px;
+    }
+
+    &__grid {
+      grid-template-columns:1fr !important;
+      gap: 16px;
+    }
+  }
+
+  .project-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    &__image {
+      height: 220px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-projects {
+    margin-top: 20px;
+
+    .profile-card {
+      padding: 12px;
+    }
+
+    .profile-card__header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__actions {
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  .project-card {
+    &__body {
+      padding: 14px;
+    }
+
+    &__title {
+      font-size: 16px;
+    }
+
+    &__footer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+
+    &__link {
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+    }
+
+    &__external {
+      width: 38px;
+      height: 38px;
+    }
+  }
+}
+
+////////////////////////////// activity page /////////////////////////////////////////
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .profile-activity {
+    .profile-card {
+      padding: 20px;
+    }
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .profile-activity {
+    margin-top: 20px;
+
+    .profile-card {
+      padding: 16px;
+      border-radius: 12px;
+    }
+
+    .profile-card__header {
+      margin-bottom: 20px;
+    }
+
+    &__filters {
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    &__filter {
+      padding: 8px 13px;
+      font-size: 11px;
+    }
+
+    &__timeline {
+      gap: 14px;
+    }
+  }
+
+  .activity-item {
+    gap: 12px;
+    padding: 15px;
+
+    &__icon {
+      width: 38px;
+      height: 38px;
+      font-size: 16px;
+      border-radius: 10px;
+    }
+
+    &__header {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 6px;
+
+      h3 {
+        font-size: 13px;
+      }
+    }
+
+    &__content {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 480px) {
+  .profile-activity {
+    .profile-card {
+      padding: 12px;
+    }
+  }
+
+  .activity-item {
+    padding: 12px;
+    gap: 10px;
+
+    &__icon {
+      width: 34px;
+      height: 34px;
+      font-size: 14px;
+    }
+
+    &__header {
+      h3 {
+        font-size: 12px;
+      }
+
+      span {
+        font-size: 10px;
+      }
+    }
+
+    &__content {
+      p {
+        font-size: 11px;
+        margin: 8px 0 10px;
+      }
+    }
+
+    &__link {
+      font-size: 11px;
+    }
   }
 }
