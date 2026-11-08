@@ -1,3 +1,5 @@
+import { editProfile } from "./profile.content/profile.model-edit";
+
 export function initProfileEvents() {
   const pages = document.querySelectorAll<HTMLButtonElement>('.profile-tabs__item');
 
@@ -23,4 +25,27 @@ if (data.dataset.page === page.dataset.tab) {
 })
     });
   });
-}
+
+
+ const editProfileButton = document.getElementById('editProfileButton');
+const modalContainer = document.getElementById('modalContainer');
+
+
+editProfileButton?.addEventListener('click', function () {
+
+  if (!modalContainer) return;
+
+  modalContainer.innerHTML = editProfile();
+
+  const modal = document.getElementById('editProfileModal');
+  modal?.classList.add('is-active');
+
+  const cancelButton = document.getElementById('cancelButton');
+
+  cancelButton?.addEventListener('click', function () {
+    modal?.classList.remove('is-active');
+  });
+
+});}
+
+

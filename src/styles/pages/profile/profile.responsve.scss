@@ -359,3 +359,67 @@
     }
   }
 }
+
+///////////////////////////// edit profile ///////////////////////
+
+
+@media (max-width: 768px) {
+  .edit-profile-modal {
+    padding: 12px;
+  }
+
+  .edit-profile-modal__container {
+    max-height: 95vh;
+  }
+
+  .edit-profile-modal__header,
+  .edit-profile-form {
+    padding: 18px;
+  }
+
+  .edit-profile-form__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .edit-profile-form__field--full {
+    grid-column: auto;
+  }
+
+  .edit-profile-form__cover {
+    min-height: 125px;
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-profile-modal__header {
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .edit-profile-form__cover {
+    padding: 12px;
+  }
+
+  .edit-profile-form__avatar {
+    left: 14px;
+  }
+
+  .edit-profile-form__avatar-preview {
+    width: 90px;
+    height: 90px;
+  }
+
+  .edit-profile-form__actions {
+    flex-direction: column-reverse;
+
+    button {
+      width: 100%;
+    }
+  }
+}

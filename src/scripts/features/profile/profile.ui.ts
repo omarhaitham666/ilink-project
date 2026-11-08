@@ -5,7 +5,10 @@ import { postsPage } from "./profile.content/profile.posts";
 import portfolioPage from "./profile.content/profile.portfolio";
 import activityPage from "./profile.content/profile.activity";
 
+
 export function ProfilePage(): string {
+
+
   return `
     <section class="profile">
 
@@ -48,7 +51,7 @@ export function ProfilePage(): string {
           </div>
 
           <div class="profile-header__actions">
-            <button class="profile-header__edit">
+            <button class="profile-header__edit" id="editProfileButton">
               Edit Profile
             </button>
 
@@ -108,7 +111,10 @@ ${portfolioPage()}
 
 </div>
 
-
+<div id="modalContainer"></div>
     </section>
   `
+
 }
+
+
