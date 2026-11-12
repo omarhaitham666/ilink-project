@@ -1,0 +1,25 @@
+// styles/pages/settings/_settings.responsive.scss
+
+@media (max-width: 1200px) {
+  .settings-page {
+    .settings-layout {
+      grid-template-columns: 240px 1fr;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .settings-page {
+    .settings-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .settings-form {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

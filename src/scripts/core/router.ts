@@ -1,4 +1,4 @@
-
+import { SettingsPage } from "../pages/settings";
 import { Sidebar } from "../layouts/sidebar";
 import { PlaceholderPage } from "../pages/placeholder";
 
@@ -33,10 +33,10 @@ const routes: Record<string, Route> = {
   mount:initProfileEvents
 },
 
-  "/settings": {
-    title: "Settings",
-    render: () => PlaceholderPage("Settings"),
-  },
+"/settings": {
+  title: "Settings",
+  render: SettingsPage,
+},
 };
 
 let cleanupCurrentPage: (() => void) | undefined;
