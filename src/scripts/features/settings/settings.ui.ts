@@ -3,7 +3,7 @@
 import { settingsSections, settingsUser } from "./settings.data";
 
 export function renderSettings(): string {
-  const { account, avatar, cover } = settingsUser;
+  const { account, avatar } = settingsUser;
 
   // 1. القائمة الوسطى (قائمة إعدادات الفرعية)
   const navItemsHTML = settingsSections
@@ -29,14 +29,14 @@ export function renderSettings(): string {
     <div class="settings-page">
       
       <!-- الهيدر العلوي الكبير بصورة المدينة الليلية والهلال -->
-      <header class="settings-header" style="background-image: url('${cover}'); background-size: cover; background-position: center;">
+      <header class="settings-header">
         <div class="settings-header__content">
           <h1 class="settings-header__title">Settings</h1>
           <p class="settings-header__subtitle">Manage your account, privacy, and app experience.</p>
         </div>
       </header>
 
-      <!-- التخطيط الرئيسي (3 أعمدة مطابقة للصورة تماماً) -->
+      <!-- Settings content columns; global sidebar is outside this page -->
       <div class="settings-layout">
         
         <!-- العمود الأول: قائمة الإعدادات الفرعية في المنتصف -->
@@ -55,7 +55,7 @@ export function renderSettings(): string {
 
             <!-- كارت غلاف البروفايل (الـ Cover الصغير) -->
             <div class="settings-profile-banner">
-              <div class="settings-profile-banner__cover" style="background-image: url('${cover}')">
+              <div class="settings-profile-banner__cover">
                 <button type="button" class="settings-profile-banner__edit-cover">
                   <i class="fa-regular fa-image"></i> Edit Cover
                 </button>
@@ -79,7 +79,7 @@ export function renderSettings(): string {
             </div>
 
             <!-- الفورم وحقول الإدخال الخاصة بـ AccountSettings -->
-            <form class="settings-form" onsubmit="event.preventDefault();">
+            <form class="settings-form settings-form--reference" onsubmit="event.preventDefault();">
               <div class="settings-form__grid">
                 
                 <!-- Full Name -->
@@ -139,7 +139,7 @@ export function renderSettings(): string {
                 <!-- Bio (Full Width - بياخد العمودين مع بعض) -->
                 <div class="settings-field settings-field--full">
                   <label class="settings-field__label"><i class="fa-regular fa-note-sticky"></i> Bio</label>
-                  <div class="settings-field__textarea-wrapper" style="position: relative;">
+                  <div class="settings-field__textarea-wrapper">
                     <textarea class="settings-field__textarea" rows="3">${account.bio}</textarea>
                     <span class="settings-field__counter">${account.bio.length} / 160</span>
                   </div>
@@ -149,8 +149,8 @@ export function renderSettings(): string {
 
               <!-- أزرار الحفظ والإلغاء في الأسفل -->
               <div class="settings-form__actions">
-                <button type="button" class="btn-discard" style="background: transparent; border: none; color: #94a3b8; cursor: pointer; font-weight: 600;">Discard Changes</button>
-                <button type="submit" class="btn-save" style="background: linear-gradient(135deg, #9333ea, #4f46e5); border: none; color: white; padding: 10px 24px; border-radius: 10px; cursor: pointer; font-weight: 600;">Save Changes</button>
+                <button type="button" class="btn-discard">Discard Changes</button>
+                <button type="submit" class="btn-save">Save Changes</button>
               </div>
             </form>
 

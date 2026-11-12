@@ -1,77 +1,74 @@
 @media (max-width: 1250px) {
-  .settings-page {
-    .settings-layout {
-      grid-template-columns:
-        minmax(240px, 300px)
-        minmax(0, 1fr);
-    }
+  .settings-page .settings-layout {
+    grid-template-columns: minmax(235px, 300px) minmax(0, 1fr);
   }
-
   .settings-card {
-    padding: 22px;
+    padding: 20px;
   }
-
   .settings-form__grid {
-    gap: 12px;
+    gap: 10px;
   }
 }
-
 @media (max-width: 1000px) {
-  .settings-page {
-    .settings-layout {
-      grid-template-columns: minmax(0, 1fr);
-    }
+  .settings-page .settings-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .settings-nav {
+    min-height: auto;
+  }
+  .settings-card {
+    min-height: auto;
   }
 }
-
 @media (max-width: 600px) {
   .settings-page {
-    padding: 16px 12px;
+    padding: 0 10px 20px;
   }
-
   .settings-header {
-    padding: 20px 14px;
-
-    &__title {
-      font-size: 28px;
-    }
+    padding: 22px 12px;
+    min-height: 115px;
   }
-
+  .settings-header__title {
+    font-size: 29px;
+  }
+  .settings-header__subtitle {
+    font-size: 13px;
+  }
+  .settings-nav {
+    padding: 15px;
+    gap: 9px;
+  }
+  .settings-nav__item {
+    min-height: 66px;
+  }
   .settings-card {
-    padding: 18px;
+    padding: 17px;
   }
-
-  .settings-profile-banner {
-    &__avatar-wrapper {
-      width: 90px;
-      height: 90px;
-    }
-
-    &__user {
-      margin-top: -42px;
-      padding: 0 8px;
-      gap: 12px;
-    }
-
-    &__name {
-      font-size: 18px;
-    }
+  .settings-card__header h2 {
+    font-size: 23px;
   }
-
-  .settings-form {
-    &__grid {
-      grid-template-columns: minmax(0, 1fr);
-    }
-
-    &__actions {
-      flex-wrap: wrap;
-
-      button {
-        flex: 1;
-      }
-    }
+  .settings-profile-banner__avatar-wrapper {
+    width: 90px;
+    height: 90px;
   }
-
+  .settings-profile-banner__user {
+    margin-top: -42px;
+    padding: 0 8px;
+    gap: 12px;
+  }
+  .settings-profile-banner__name {
+    font-size: 18px;
+  }
+  .settings-profile-banner__handle {
+    font-size: 13px;
+  }
+  .settings-form__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .settings-form__actions button {
+    flex: 1;
+    padding: 0 12px;
+  }
   .settings-field--full {
     grid-column: 1 / -1;
   }

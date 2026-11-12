@@ -1,58 +1,62 @@
 .settings-page {
+  --s-bg: #100c1c;
+  --s-panel: #151024;
+  --s-line: rgba(183, 145, 236, 0.19);
+  --s-purple: #b65bfb;
+  box-sizing: border-box;
   width: 100%;
   min-width: 0;
   min-height: 100vh;
-  padding: 28px 16px;
-  color: #fff;
-  background: #0c0914;
-  box-sizing: border-box;
-
+  padding: 0 14px 30px;
+  color: #f8f4ff;
+  background:
+    radial-gradient(
+      ellipse at 65% 5%,
+      rgba(97, 30, 132, 0.16),
+      transparent 58%
+    ),
+    #0e0a19;
+  font-family: Inter, "Plus Jakarta Sans", sans-serif;
   .settings-layout {
     display: grid;
-    grid-template-columns: minmax(280px, 375px) minmax(0, 1fr);
+    grid-template-columns: minmax(285px, 375px) minmax(0, 1fr);
     gap: 18px;
-    width: 100%;
     align-items: stretch;
+    width: 100%;
   }
 }
-
 .settings-header {
+  min-height: 127px;
   position: relative;
-  min-height: 110px;
-  padding: 24px 22px;
-  margin-bottom: 18px;
-  overflow: hidden;
+  isolation: isolate;
   display: flex;
-  align-items: center;
-
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 18px 22px;
+  margin: 0 0 0;
+  overflow: hidden;
   background:
-    linear-gradient(
-      90deg,
-      rgba(15, 10, 26, .85),
-      rgba(15, 10, 26, .15)
-    ),
-    url("/images/settings-header.webp")
-      center / cover no-repeat;
-
+    linear-gradient(90deg, rgba(13, 9, 24, 0.86) 0%, rgba(26, 9, 43, 0.2) 70%),
+    url("/assets/settings/city-reference.webp") center / cover no-repeat;
   &__content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
   }
-
   &__title {
-    font-size: 34px;
-    font-weight: 700;
     margin: 0 0 6px;
-    color: #fff;
+    font-size: 36px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: white;
   }
-
   &__subtitle {
-    font-size: 15px;
-    color: #d6c9e7;
     margin: 0;
+    color: #ddd1e9;
+    font-size: 15px;
+    line-height: 1.4;
   }
 }
-
 .settings-content {
   min-width: 0;
   width: 100%;

@@ -1,7 +1,6 @@
-// styles/pages/settings/settings.scss
 
-@import 'settings.header';
-@import 'settings.navigation';
-@import 'settings.sidebar-menu';
-@import 'settings.acount';
-@import 'settings.responsive';
+@use "./settings.header" as *;
+@use "./settings.navigation" as *;
+@use "./settings.sidebar-menu" as *;
+@use "./settings.acount" as *;
+@use "./settings.responsive" as *;
