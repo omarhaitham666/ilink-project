@@ -1,25 +1,78 @@
-// styles/pages/settings/_settings.responsive.scss
-
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .settings-page {
     .settings-layout {
-      grid-template-columns: 240px 1fr;
+      grid-template-columns:
+        minmax(240px, 300px)
+        minmax(0, 1fr);
+    }
+  }
+
+  .settings-card {
+    padding: 22px;
+  }
+
+  .settings-form__grid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .settings-page {
+    .settings-layout {
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 600px) {
   .settings-page {
-    .settings-layout {
-      grid-template-columns: 1fr;
+    padding: 16px 12px;
+  }
+
+  .settings-header {
+    padding: 20px 14px;
+
+    &__title {
+      font-size: 28px;
     }
   }
-}
 
-@media (max-width: 576px) {
+  .settings-card {
+    padding: 18px;
+  }
+
+  .settings-profile-banner {
+    &__avatar-wrapper {
+      width: 90px;
+      height: 90px;
+    }
+
+    &__user {
+      margin-top: -42px;
+      padding: 0 8px;
+      gap: 12px;
+    }
+
+    &__name {
+      font-size: 18px;
+    }
+  }
+
   .settings-form {
     &__grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
     }
+
+    &__actions {
+      flex-wrap: wrap;
+
+      button {
+        flex: 1;
+      }
+    }
+  }
+
+  .settings-field--full {
+    grid-column: 1 / -1;
   }
 }
