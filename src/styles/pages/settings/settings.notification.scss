@@ -1,0 +1,292 @@
+
+// ===================================
+// iLink — Notifications
+// ===================================
+
+.notification-card {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #f5f3ff;
+  padding: 20px;
+  background: #100d1c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+}
+
+// -----------------------------------
+// Notification Header
+// -----------------------------------
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 30px;
+
+  &__back {
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: #bd83ff;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+}
+
+// -----------------------------------
+// Notification Cover
+// -----------------------------------
+.notification-cover {
+  width: 100%;
+  height: 116px;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 12px;
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+
+@keyframes notification-bell-glow {
+  from {
+    filter: drop-shadow(0 0 5px #d98aff);
+  }
+
+  to {
+    filter:
+      drop-shadow(0 0 12px #d98aff)
+      drop-shadow(0 0 22px #a64cff);
+  }
+}
+
+// -----------------------------------
+// Push Notifications
+// -----------------------------------
+
+.notification-push {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+
+  background: linear-gradient(
+    120deg,
+    rgba(35, 29, 49, 0.98),
+    rgba(23, 19, 35, 0.98)
+  );
+
+  &__icon {
+    width: 22px;
+    min-width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d9c5f5;
+    font-size: 15px;
+  }
+
+  &__info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0 0 3px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 10px;
+    color: #aaa2bb;
+  }
+}
+
+// -----------------------------------
+// Notification Section
+// -----------------------------------
+
+.notification-section {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  &__title {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #cfc5df;
+  }
+}
+
+// -----------------------------------
+// Notification List
+// -----------------------------------
+
+.notification-list {
+  width: 100%;
+  padding: 3px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(29, 25, 42, 0.98),
+    rgba(18, 16, 29, 0.98)
+  );
+}
+
+.notification-item {
+  min-height: 37px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 7px 0;
+
+  & + & {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  &__icon {
+    width: 19px;
+    min-width: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #d4c9e6;
+    font-size: 13px;
+  }
+
+  &__info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 500;
+    color: #f5f1ff;
+  }
+}
+
+// -----------------------------------
+// Notification Toggle
+// -----------------------------------
+
+.notification-toggle {
+  width: 37px;
+  height: 20px;
+  min-width: 37px;
+  padding: 2px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+
+  background: #454153;
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+
+  &__circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ffffff;
+
+    transition: transform 0.25s ease;
+  }
+
+  &.is-active {
+    background: linear-gradient(
+      135deg,
+      #bd6aff,
+      #8842e9
+    );
+
+    border-color: #bd6aff;
+
+    box-shadow: 0 0 10px rgba(166, 89, 255, 0.35);
+
+    .notification-toggle__circle {
+      transform: translateX(17px);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid #c58aff;
+    outline-offset: 3px;
+  }
+}
+
+// -----------------------------------
+// Responsive
+// -----------------------------------
+
+@media (max-width: 767px) {
+  .notification-card {
+    max-width: 100%;
+    padding: 14px;
+    gap: 11px;
+    border-radius: 17px;
+  }
+
+  .notification-cover {
+    height: 105px;
+    border-radius: 13px;
+  }
+
+  .notification-push {
+    padding: 9px 10px;
+  }
+
+  .notification-list {
+    padding: 3px 10px;
+  }
+
+  .notification-item {
+    min-height: 36px;
+    gap: 9px;
+  }
+}

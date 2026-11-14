@@ -1,9 +1,12 @@
+
 import { SettingsPage } from "../pages/settings";
 import { Sidebar } from "../layouts/sidebar";
 import { PlaceholderPage } from "../pages/placeholder";
 
 import { ProfilePage } from "../features/profile/profile.ui";
 import { initProfileEvents } from "../features/profile/profile.events";
+
+import { initSettingsEvents } from "../features/settings/settings.events";
 
 type Route = {
   title: string;
@@ -27,16 +30,24 @@ const routes: Record<string, Route> = {
     render: () => PlaceholderPage("Messages"),
   },
 
-"/profile": {
-  title: "Profile",
-  render: ProfilePage,
-  mount:initProfileEvents
-},
+  "/profile": {
+    title: "Profile",
+    render: ProfilePage,
+    mount: initProfileEvents,
+  },
 
-"/settings": {
-  title: "Settings",
-  render: SettingsPage,
-},
+  "/settings": {
+    title: "Settings",
+    render: SettingsPage,
+    mount: () => {
+      const settingsContainer =
+        document.querySelector<HTMLElement>(".settings-page");
+
+      if (settingsContainer) {
+        initSettingsEvents(settingsContainer);
+      }
+    },
+  },
 };
 
 let cleanupCurrentPage: (() => void) | undefined;
