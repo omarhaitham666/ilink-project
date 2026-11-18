@@ -1,0 +1,256 @@
+
+// ===================================
+// iLink — Blocked Accounts
+// ===================================
+
+.blocked-settings {
+  width: 100%;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #f5f3ff;
+}
+
+// -----------------------------------
+// Header
+// -----------------------------------
+
+.blocked-settings__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.blocked-settings__title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #f5f3ff;
+  margin-bottom: 8px;
+}
+
+.blocked-settings__description {
+  color: #a1a1aa;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.blocked-settings__count {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 12px;
+  color: #c084fc;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+// -----------------------------------
+// Blocked Card
+// -----------------------------------
+
+.blocked-card {
+  width: 100%;
+  background: #12111b;
+  border: 1px solid rgba(168, 85, 247, 0.14);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.blocked-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  h3 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #f5f3ff;
+    margin-bottom: 6px;
+  }
+
+  p {
+    color: #71717a;
+    font-size: 13px;
+  }
+
+  > i {
+    font-size: 22px;
+    color: #a855f7;
+  }
+}
+
+// -----------------------------------
+// Blocked Users List
+// -----------------------------------
+
+.blocked-users-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.blocked-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.25s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: rgba(168, 85, 247, 0.05);
+  }
+}
+
+// -----------------------------------
+// User Profile
+// -----------------------------------
+
+.blocked-user__profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.blocked-user__avatar {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(168, 85, 247, 0.4);
+}
+
+.blocked-user__info {
+  min-width: 0;
+}
+
+.blocked-user__name {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f5f3ff;
+  margin-bottom: 5px;
+}
+
+.blocked-user__username {
+  color: #71717a;
+  font-size: 12px;
+}
+
+// -----------------------------------
+// Unblock Button
+// -----------------------------------
+
+.blocked-user__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 112px;
+  padding: 10px 15px;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: 10px;
+  background: rgba(168, 85, 247, 0.1);
+  color: #c084fc;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: #a855f7;
+    border-color: #a855f7;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  i {
+    font-size: 12px;
+  }
+}
+
+// -----------------------------------
+// Empty State
+// -----------------------------------
+
+.blocked-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 55px 20px;
+
+  > i {
+    font-size: 38px;
+    color: #a855f7;
+    margin-bottom: 18px;
+  }
+
+  h3 {
+    color: #f5f3ff;
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #71717a;
+    font-size: 13px;
+  }
+}
+
+// -----------------------------------
+// Responsive
+// -----------------------------------
+
+@media (max-width: 600px) {
+  .blocked-settings__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .blocked-settings__title {
+    font-size: 22px;
+  }
+
+  .blocked-user {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .blocked-user__avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .blocked-user__button {
+    min-width: auto;
+    padding: 9px 11px;
+
+    span {
+      font-size: 11px;
+    }
+  }
+
+  .blocked-card__header {
+    padding: 18px 16px;
+  }
+}

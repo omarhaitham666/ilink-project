@@ -1,11 +1,14 @@
 
- // scripts/features/settings/settings.ui.ts
+// scripts/features/settings/settings.ui.ts
 
 import { settingsSections } from "./settings.data";
 
 import { renderAccountSettings } from "./settings.account";
 import { renderPrivacySettings } from "./settings.privacy&security";
 import { renderNotificationSettings } from "./settings.notification";
+import { renderBlockedSettings } from "./settings.blocked";
+import { renderAppearanceSettings } from "./settings.appearance"
+
 
 // تحديد محتوى كل صفحة
 export function renderSettingsContent(activeTab: string): string {
@@ -18,8 +21,15 @@ export function renderSettingsContent(activeTab: string): string {
     case "privacy":
       return renderPrivacySettings();
 
-          case "notifications":
+    case "notifications":
       return renderNotificationSettings();
+
+    case "blocked":
+      return renderBlockedSettings();
+
+    case "appearance":
+      return renderAppearanceSettings();
+
 
     default:
       return `

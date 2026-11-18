@@ -1,8 +1,9 @@
 
- // scripts/features/settings/settings.events.ts
+// scripts/features/settings/settings.events.ts
 
 import { settingsSections } from "./settings.data";
 import { renderSettingsContent } from "./settings.ui";
+import { initBlockedEvents } from "./settings.blocked";
 
 export function initSettingsEvents(root: HTMLElement): void {
 
@@ -13,12 +14,63 @@ export function initSettingsEvents(root: HTMLElement): void {
 
   root.dataset.settingsEvents = "initialized";
 
-  // الاستماع للضغط على Navigation
+  // -----------------------------------
+  // تشغيل أحداث الصفحة الحالية
+  // -----------------------------------
+
+  const initializeCurrentPage = (activeTab: string): void => {
+    if (activeTab === "blocked") {
+      initBlockedEvents();
+    }
+  };
+
+  // تشغيل أحداث الصفحة عند التحميل الأول
+  const initialActiveTab =
+    root.querySelector<HTMLElement>(".settings-nav__item.is-active")
+      ?.dataset.tab ?? "account";
+
+  initializeCurrentPage(initialActiveTab);
+
+  // الاستماع للضغط
   root.addEventListener("click", (event: MouseEvent) => {
 
     const target = event.target;
 
     if (!(target instanceof Element)) return;
+
+    // -----------------------------------
+    // Appearance Theme Selection
+    // -----------------------------------
+
+    const themeButton = target.closest<HTMLButtonElement>(
+      "[data-theme-option]"
+    );
+
+    if (themeButton && root.contains(themeButton)) {
+
+      const themeButtons = root.querySelectorAll<HTMLButtonElement>(
+        "[data-theme-option]"
+      );
+
+      themeButtons.forEach((button) => {
+
+        const isActive = button === themeButton;
+
+        button.classList.toggle("is-active", isActive);
+
+        button.setAttribute(
+          "aria-pressed",
+          String(isActive)
+        );
+
+      });
+
+      return;
+    }
+
+    // -----------------------------------
+    // Settings Navigation
+    // -----------------------------------
 
     const navButton = target.closest<HTMLButtonElement>(
       ".settings-nav__item"
@@ -53,6 +105,9 @@ export function initSettingsEvents(root: HTMLElement): void {
     if (!content) return;
 
     content.innerHTML = renderSettingsContent(activeTab);
+
+    // تشغيل أحداث الصفحة المختارة
+    initializeCurrentPage(activeTab);
 
   });
 
