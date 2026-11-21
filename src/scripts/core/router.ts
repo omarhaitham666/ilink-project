@@ -8,6 +8,9 @@ import { initProfileEvents } from "../features/profile/profile.events";
 
 import { initSettingsEvents } from "../features/settings/settings.events";
 
+import { SuggestionsPage } from "../features/Suggestions/Suggestion.ui";
+import { initSuggestionsEvents } from "../features/Suggestions/suggestions.events";
+
 type Route = {
   title: string;
   render: () => string;
@@ -35,6 +38,12 @@ const routes: Record<string, Route> = {
     render: ProfilePage,
     mount: initProfileEvents,
   },
+
+  "/suggestions": {
+  title: "Suggestions",
+  render: SuggestionsPage,
+  mount: initSuggestionsEvents,
+},
 
   "/settings": {
     title: "Settings",
